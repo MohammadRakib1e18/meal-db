@@ -4,7 +4,7 @@
 .cart li{
     list-style-position: inside;
     margin-bottom: 8px;
-    padding: 5px 0px;
+    padding: 5px 2px;
     font-size: 1rem;
     box-shadow: 2px 2px 15px rgb(66, 66, 66);
     border-left: 4px solid #111416;
@@ -17,4 +17,8 @@
     font-weight: bold;
     color: rgb(190, 24, 24);
     font-size: 1.1rem;
+}
+.cart .mealName{
+    font-weight: 700;
+    color: rgb(102, 82, 26);
 }

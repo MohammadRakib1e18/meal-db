@@ -41,3 +41,8 @@
     border: 0;
     cursor: pointer;
 }
+
+.meal .shopping-cart-icon{
+    margin-left: 5px;
+    font-size: 1rem;
+}

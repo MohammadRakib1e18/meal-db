@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import Cart from "../Cart/Cart";
 import SingleMeal from "../SingleMeal/SingleMeal";
 import "./Meal.css";
@@ -21,15 +22,32 @@ const Meal = () => {
     if (!order){
       let newOrder = {mealName, Quantity:1};
       setSelectedMeals([...selectedMeals, newOrder]);
+      Swal.fire({
+        icon: "success",
+        title: "Order Placed Successfully!",
+        showConfirmButton: true,
+        timer: 1500,
+      });
     }
     else{
       selectedMeals.forEach(meal=>{
         if(meal === order){
           if(meal.Quantity===5){
-            alert("You can't add more than 5 products!");
-            
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "You can't add more than 5 products!",
+            });
           }
-          else meal.Quantity++;
+          else{
+            meal.Quantity++;
+            Swal.fire({
+              icon: "success",
+              title: "Order Placed Successfully!",
+              showConfirmButton: true,
+              timer: 1000,
+            });
+          }
         }
       })
       setSelectedMeals([...selectedMeals]);

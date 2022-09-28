@@ -6,7 +6,7 @@ const Cart = (props) => {
     return (
         <ol className="cart">
             {
-                props.meal.map(m => <li><span>{m.mealName}</span> <span class="quantity"> [{m.Quantity}]</span></li>)
+                props.meal.map(m => <li><span className='mealName'>{m.mealName}</span> <span class="quantity"> [{m.Quantity}]</span></li>)
             }
         </ol>
     );
