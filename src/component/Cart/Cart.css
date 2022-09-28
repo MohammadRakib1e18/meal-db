@@ -1,0 +1,20 @@
+.cart{
+    padding-inline: 10px;
+}
+.cart li{
+    list-style-position: inside;
+    margin-bottom: 8px;
+    padding: 5px 0px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 15px rgb(66, 66, 66);
+    border-left: 4px solid #111416;
+    text-align: left;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart .quantity{
+    font-weight: bold;
+    color: rgb(190, 24, 24);
+    font-size: 1.1rem;
+}

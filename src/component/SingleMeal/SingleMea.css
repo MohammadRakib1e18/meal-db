@@ -1,0 +1,43 @@
+.meal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.meal-description{
+    margin:0 15px;
+}
+.meal img{
+    width: 90%;
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+
+}
+.meal h3{
+    margin:2px 0;
+    color:rgb(129, 78, 11);
+}
+.meal p{
+    color:rgba(90, 51, 4, 0.747);
+    font-weight: 500;
+}
+
+.meal small{
+    color: gray;
+    font-weight: 600;
+    margin-right: 10px;
+}
+.meal button{
+    width: 100%;
+    background-image: linear-gradient(135deg, rgb(131, 78, 9), rgb(231, 149, 41));
+    font-size: 1.1rem;
+    padding: 5px;
+    color: white;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+}

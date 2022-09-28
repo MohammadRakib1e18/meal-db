@@ -1,0 +1,15 @@
+.banner{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    background-color: rgba(9, 48, 90, 0.575);
+}
+.header-text{
+    color: white;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color:rgba(30, 72, 136, 0.623);
+    font-weight: 700;
+}
