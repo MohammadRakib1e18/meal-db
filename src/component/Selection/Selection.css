@@ -1,0 +1,24 @@
+.selections{
+    margin: 0 10px;
+}
+.selections ul{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 10px;
+    padding-left: 0;
+}
+.selections ul li{
+    list-style-type: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color: rgb(113, 136, 160);
+    width: 100%;
+    padding: 5px 0;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.selections ul li:hover{
+    /* background-color: #053364; */
+}

@@ -22,4 +22,5 @@ nav ul li{
 }
 nav ul li:hover{
     color: #F0932B;
+    cursor: pointer;
 }

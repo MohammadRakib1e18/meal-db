@@ -25,7 +25,7 @@ const SingleMeal = (props) => {
           addToCart(strMeal);
         }}
       >
-        Add to Cart <span class="shopping-cart-icon"><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></span>
+        Add to Cart <span className="shopping-cart-icon"><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></span>
       </button>
     </div>
   );
