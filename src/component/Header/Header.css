@@ -46,3 +46,19 @@ a{
 .banner h2 span{
     color: #F0932B;
 }
+
+@media screen and (max-width: 688px) {
+  .banner{
+    flex-direction: column;
+  }
+  .banner h2{
+    margin-top: -50px;
+    font-size:2em;
+  }
+  .banner-img-2{
+    display: none;
+  }
+  .banner-text-break{
+    display: none;
+  }
+}

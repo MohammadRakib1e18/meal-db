@@ -13,11 +13,10 @@ textarea {
   outline: none;
   border: none;
   background-image: linear-gradient(135deg, rgb(131, 78, 9), rgb(231, 149, 41));
-}
-input[type="text"] {
   font-size: 1.5rem;
   color: rgb(9, 32, 109);
 }
+
 input[type="submit"] {
   outline: none;
   border: none;
@@ -35,7 +34,7 @@ input[type="submit"] {
     rgb(117, 71, 11)
   );
 }
-::placeholder {
+::placeholder, textarea::placeholder {
   font-size: 0.8rem;
   font-weight: 800;
   color: rgb(190, 188, 188);
@@ -44,4 +43,10 @@ input[type="submit"] {
   transition: text-indent 0.6s 0.5s ease-in-out;
   text-indent: -100%;
   opacity: 1;
+}
+
+@media screen and (max-width: 688px){
+  .form{
+    width: 95%;
+  }
 }

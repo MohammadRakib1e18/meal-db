@@ -15,14 +15,15 @@ const Header = () => {
   }, []);
   return (
     <div className="banner">
-      <Particles width="300" height="500" 
+      <Particles
+        width="300"
+        height="500"
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
         options={{
           fpsLimit: 120,
-          
-         
+
           particles: {
             color: {
               value: "#ffffff",
@@ -67,18 +68,31 @@ const Header = () => {
           detectRetina: true,
         }}
       />
-      <img src={headerMeal} alt="" />
+      <img
+        src={headerMeal}
+        alt=""
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        class="banner-img-1"
+      />
       <div className="header-text">
-        <h2><span>W</span>ELCOM<span>E</span> To The <span>M</span>ealD<span>B</span></h2>
+        <h2>
+          <span>W</span>ELCOM<span>E</span> To The <span>M</span>ealD
+          <span>B</span>
+        </h2>
 
         <p>
           Welcome to TheMealDB: An open, crowd-sourced database of Recipes from
           around the world.
-          <br /> We also offer a<a href={api}> free JSON API</a> for anyone
+          <br className="banner-text-break"/> We also offer a<a href={api}> free JSON API</a> for anyone
           wanting to use it, with additional features for subscribers.
         </p>
       </div>
-      <img src={headerMeal} alt="" />
+      <img
+        src={headerMeal}
+        alt=""
+        class="banner-img-2"
+      />
     </div>
   );
 };

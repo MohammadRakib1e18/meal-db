@@ -7,20 +7,18 @@ const Selection = ({ getLetter }) => {
 
   const btnHandler = (e) => {
     let currButton = e.target;
- 
-    if (prevText && (currButton.innerText === prevText)) return;
-    
+    let currText = currButton.innerText;
+
+    if (currText === prevText) return;
+
     currButton.style.backgroundColor = "#053364";
-    currButton.innerHTML += ` <i class="fa fa-solid fa-check"></i>`;
 
-    getLetter(currButton.innerText);
-    setPrevText(currButton.innerText);
-    setPrevButton(currButton);
-
-    if (prevText && currButton.innerText !== prevText) {
+    if (prevText && (currText !== prevText)) {
       prevButton.style.backgroundColor = "rgb(113, 136, 160)";
-      prevButton.innerText = prevButton.innerText.split(" ")[0];
     }
+    getLetter(currText);
+    setPrevText(currText);
+    setPrevButton(currButton);
   };
   return (
     <div className="selections">
@@ -35,6 +33,8 @@ const Selection = ({ getLetter }) => {
         <li onClick={(event) => btnHandler(event)}>H</li>
         <li onClick={(event) => btnHandler(event)}>I</li>
         <li onClick={(event) => btnHandler(event)}>J</li>
+        <li onClick={(event) => btnHandler(event)}>K</li>
+        <li onClick={(event) => btnHandler(event)}>L</li>
       </ul>
     </div>
   );

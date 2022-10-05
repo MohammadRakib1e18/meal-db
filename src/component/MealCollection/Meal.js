@@ -21,7 +21,8 @@ const Meal = () => {
   }, [letter]);
 
   const getLetter = (letter) => {
-    setLetter(letter);
+    console.log("hello get letter");
+    if(letter) setLetter(letter);
   };
 
   const addToCart = (mealName) => {
@@ -72,7 +73,11 @@ const Meal = () => {
             ></SingleMeal>
           ))}
         </div>
-        <div className="cart-container">
+        <div
+          className="cart-container"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <h2>Selected Food</h2>
           <Cart meal={selectedMeals}></Cart>
         </div>

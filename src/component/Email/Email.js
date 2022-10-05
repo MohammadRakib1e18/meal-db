@@ -25,7 +25,7 @@ const Email = () => {
       e.target.reset();
     };
     return (
-      <div className="form">
+      <div className="form" data-aos="fade-up" data-aos-duration="3000">
         <form onSubmit={sendEmail}>
           <input type="text" placeholder="Name" required name="name" />
           <input
@@ -42,7 +42,7 @@ const Email = () => {
             name="subject"
             id=""
           />
-          <textarea placeholder="message" required name="message" />
+          <textarea type="text" placeholder="message" required name="message" />
           <input id="email-submit" type="submit" value="Submit" />
         </form>
       </div>
