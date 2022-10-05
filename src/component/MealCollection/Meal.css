@@ -28,20 +28,21 @@
 }
 
 @media screen and (max-width: 688px) {
-  .production{
+  .production {
     flex-direction: column;
   }
-    .meal-container {
+  .meal-container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 25px;
-    order: 4;
+    order: 15;
   }
-  .cart-container{
+  .cart-container {
     width: 100%;
-    order: 0;
+    
     position: relative;
+    order: 10;
   }
 }
 @media screen and (min-width: 689px) and (max-width: 992px) {
@@ -51,7 +52,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 25px;
   }
-  .cart-container{
+  .cart-container {
     width: 30%;
   }
 }

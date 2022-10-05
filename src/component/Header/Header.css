@@ -27,7 +27,7 @@ a{
     font-weight: 400;
     position: absolute;
     display: flex;
-    justify-content: start;
+    justify-content:flex-start;
     align-items: center;
     left: 0%;
     width: 120%;
