@@ -73,7 +73,7 @@ const Header = () => {
         alt=""
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
-        class="banner-img-1"
+        className="banner-img-1"
       />
       <div className="header-text">
         <h2>
@@ -91,7 +91,7 @@ const Header = () => {
       <img
         src={headerMeal}
         alt=""
-        class="banner-img-2"
+        className="banner-img-2"
       />
     </div>
   );
