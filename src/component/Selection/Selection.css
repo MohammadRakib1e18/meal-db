@@ -23,7 +23,7 @@
     /* background-color: #053364; */
 }
 
-@media screen and (max-width: 688px){
+/* @media screen and (max-width: 688px){
     .selections ul{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -34,4 +34,21 @@
         display: grid;
         grid-template-columns: repeat(6, 1fr);
     }
+} */
+/* responsiveness */
+
+/* mobile device  */
+@media screen and (max-width: 720px) {
+  .selections ul{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* tablet device  */
+@media screen and (min-width:721px) and (max-width:992px){
+    .selections ul{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
 }

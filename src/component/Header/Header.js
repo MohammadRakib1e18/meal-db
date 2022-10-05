@@ -71,8 +71,7 @@ const Header = () => {
       <img
         src={headerMeal}
         alt=""
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
+        
         className="banner-img-1"
       />
       <div className="header-text">

@@ -47,7 +47,10 @@ a{
     color: #F0932B;
 }
 
-@media screen and (max-width: 688px) {
+/* responsiveness */
+
+/* mobile device  */
+@media screen and (max-width: 720px) {
   .banner{
     flex-direction: column;
   }
@@ -61,4 +64,21 @@ a{
   .banner-text-break{
     display: none;
   }
+}
+/* tablet device  */
+@media screen and (min-width:721px) and (max-width:992px){
+    .banner{
+    flex-direction: column;
+  }
+  .banner h2{
+    margin-top: -30px;
+    font-size:3em;
+  }
+  .banner-img-2{
+    display: none;
+  }
+  .banner-text-break{
+    display: none;
+  }
+
 }

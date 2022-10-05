@@ -6,13 +6,11 @@ import "./SingleMea.css";
 const SingleMeal = (props) => {
   const { strMeal, strCategory, strTags, strMealThumb, strInstructions } =
     props.meal;
-  console.log(typeof Number(props.meal.idMeal));
-  let index = Number(props.meal.idMeal) % 3;
 
   const addToCart = props.btn;
   if(true){
     return (
-      <div className="meal" data-aos="fade-up" data-aos-duration="2000">
+      <div className="meal">
         <section className="meal-description">
           <img src={strMealThumb} alt="" />
           <h3>{strMeal}</h3>

@@ -25,7 +25,7 @@ const Email = () => {
       e.target.reset();
     };
     return (
-      <div className="form" data-aos="fade-up" data-aos-duration="3000">
+      <div className="form">
         <form onSubmit={sendEmail}>
           <input type="text" placeholder="Name" required name="name" />
           <input
