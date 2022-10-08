@@ -3,6 +3,7 @@ import ScrollToTop from "react-scroll-to-top";
 import { Outlet } from "react-router-dom";
 
 const Main = () => {
+  
   return (
     <div>
       <ScrollToTop

@@ -10,7 +10,6 @@ const Meal = () => {
   const [selectedMeals, setSelectedMeals] = useState([]);
   const [letter, setLetter] = useState('a');
   
-
   useEffect(() => {
     let url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
     fetch(url)

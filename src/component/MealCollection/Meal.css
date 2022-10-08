@@ -50,7 +50,7 @@
   }
 }
 /* tablet device  */
-@media screen and (min-width:721px) and (max-width:992px){
+@media screen and (min-width:721px) and (max-width:1150px){
     .production{
     flex-direction: column;
   }

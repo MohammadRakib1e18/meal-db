@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const About = () => {
+    useEffect(()=>{
+        document.title ="Home:About";
+    },[])
     return (
         <div>
             <h1>This is about section</h1>
