@@ -9,6 +9,7 @@ const Meal = () => {
   const [loadedMeals, setLoadedMeals] = useState([]);
   const [selectedMeals, setSelectedMeals] = useState([]);
   const [letter, setLetter] = useState('a');
+  const [id, setId] = useState(1);
   
   useEffect(() => {
     let url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
@@ -24,11 +25,11 @@ const Meal = () => {
   };
 
   const addToCart = (mealName) => {
-    mealName.id=5;
 
     let order = selectedMeals.find((meal) => meal.mealName === mealName);
     if (!order) {
-      let newOrder = { mealName, Quantity: 1 };
+      let newOrder = { mealName, Quantity: 1, id:id };
+      setId(id+1);
       setSelectedMeals([...selectedMeals, newOrder]);
       Swal.fire({
         icon: "success",
@@ -61,7 +62,8 @@ const Meal = () => {
   };
 
   const deleteItem = item => {
-    console.log(item);
+    const remItem = selectedMeals.filter(meal => meal.id !== item.id);
+    setSelectedMeals([...remItem]);
   }
 
   return (

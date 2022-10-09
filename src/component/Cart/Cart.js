@@ -4,10 +4,12 @@ import React from "react";
 import "./Cart.css";
 
 const Cart = ({ meal, deleteItem }) => {
+  console.log(meal);
   return (
     <ol className="cart">
       {meal.map((m) => (
-        <li>
+        
+        <li key={m.id}>
           <span className="mealName">{m.mealName}</span>{" "}
           <span className="quantity"> [{m.Quantity}]</span>
           <FontAwesomeIcon
