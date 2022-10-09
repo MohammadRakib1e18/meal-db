@@ -24,6 +24,8 @@ const Meal = () => {
   };
 
   const addToCart = (mealName) => {
+    mealName.id=5;
+
     let order = selectedMeals.find((meal) => meal.mealName === mealName);
     if (!order) {
       let newOrder = { mealName, Quantity: 1 };
@@ -58,6 +60,10 @@ const Meal = () => {
     }
   };
 
+  const deleteItem = item => {
+    console.log(item);
+  }
+
   return (
     <>
       <Selection getLetter={getLetter}></Selection>
@@ -73,10 +79,11 @@ const Meal = () => {
         </div>
         <div
           className="cart-container"
-
+          data-aos="fade-up"
+          data-aos-duration="3000"
         >
           <h2>Selected Food</h2>
-          <Cart meal={selectedMeals}></Cart>
+          <Cart meal={selectedMeals} deleteItem={deleteItem}></Cart>
         </div>
       </div>
     </>

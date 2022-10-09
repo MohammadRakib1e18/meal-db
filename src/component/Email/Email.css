@@ -3,33 +3,39 @@
   width: 100%;
   margin: 50px auto;
   padding: 20px;
-  background: url('../../Images/Animated\ Shape.svg');
+  background: url("../../Images/Animated\ Shape.svg");
 }
-.form h1{
+.form h1 {
   color: white;
   font-size: 2.5rem;
   font-weight: 900;
 }
-.form h1 span{
+.form h1 span {
   color: #e4a00d;
 }
 .form form {
   width: 80%;
   margin: 0 auto;
-  
+
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.submit-btn{
+  margin: 0 auto;
 }
 input,
 textarea {
   padding: 12px;
   outline: none;
-  border: 2px solid rgb(14, 133, 212);;
+  border: 2px solid rgb(14, 133, 212);
   border-radius: 15px;
   background-image: linear-gradient(135deg, #1263b9, #063a72);
   font-size: 1.2rem;
   color: rgb(255, 255, 255);
+}
+textarea {
+  height: 150px;
 }
 
 input[type="submit"] {
@@ -43,13 +49,50 @@ input[type="submit"] {
   font-weight: 900;
   cursor: pointer;
 }
-#email-submit:hover {
+.submit-btn {
+  width: 250px;
+  padding: 0.8em 1.8em;
+  border: 2px solid rgb(14, 133, 212);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.4s ease-in;
+  z-index: 1;
+  font-family: inherit;
+  color: rgb(14, 133, 212);
+}
+.submit-btn::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  background:rgb(14, 133, 212);
+  transition: 0.5s ease-in-out;
+  display: block;
+  z-index: -1;
+}
+
+.submit-btn:hover::before {
+  width: 105%;
+}
+
+.submit-btn:hover {
+  color: white;
+}
+/* #email-submit:hover {
   background-image: linear-gradient(
     135deg,
     #094d96,
     #2c86e7
   );
-}
+} */
 ::placeholder {
   font-size: 1rem;
   color: rgb(190, 190, 190);
@@ -60,13 +103,13 @@ input[type="submit"] {
   opacity: 1;
 }
 
-@media screen and (max-width: 688px){
-  .form{
+@media screen and (max-width: 688px) {
+  .form {
     width: 95%;
   }
 }
-@media screen and (min-width: 689px) and (max-width: 992px){
-  .form{
+@media screen and (min-width: 689px) and (max-width: 992px) {
+  .form {
     width: 90%;
   }
 }

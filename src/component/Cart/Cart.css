@@ -2,6 +2,8 @@
     padding: 10px;
 }
 .cart li{
+    display: flex;
+    align-items: flex-end;
     list-style-position: inside;
     margin-bottom: 8px;
     padding: 5px 2px;
@@ -15,10 +17,15 @@
 }
 .cart .quantity{
     font-weight: bold;
-    color: rgb(190, 24, 24);
+    color: rgb(6, 76, 133);
     font-size: 1.1rem;
 }
 .cart .mealName{
     font-weight: 700;
     color: rgb(102, 82, 26);
+}
+.cart .deleteItem{
+    font-weight: 900;
+    color: red;
+    cursor: pointer;
 }

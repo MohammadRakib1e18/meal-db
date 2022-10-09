@@ -10,7 +10,12 @@ const SingleMeal = (props) => {
   const addToCart = props.btn;
   if(true){
     return (
-      <div className="meal">
+      <div
+        className="meal"
+        data-aos="flip-right"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <section className="meal-description">
           <img src={strMealThumb} alt="" />
           <h3>{strMeal}</h3>

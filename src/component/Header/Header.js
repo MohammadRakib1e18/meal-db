@@ -1,5 +1,5 @@
 import React from "react";
-import './Header.css';
+import "./Header.css";
 import headerMeal from "../../Images/meal-icon.png";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
@@ -11,8 +11,7 @@ const Header = () => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-  }, []);
+  const particlesLoaded = useCallback(async (container) => {}, []);
   return (
     <div className="banner">
       <Particles
@@ -69,9 +68,10 @@ const Header = () => {
         }}
       />
       <img
+        data-aos="fade-up"
+        data-aos-duration="3000"
         src={headerMeal}
         alt=""
-        
         className="banner-img-1"
       />
       <div className="header-text">
@@ -83,11 +83,14 @@ const Header = () => {
         <p>
           Welcome to TheMealDB: An open, crowd-sourced database of Recipes from
           around the world.
-          <br className="banner-text-break"/> We also offer a<a href={api}> free JSON API</a> for anyone
-          wanting to use it, with additional features for subscribers.
+          <br className="banner-text-break" /> We also offer a
+          <a href={api}> free JSON API</a> for anyone wanting to use it, with
+          additional features for subscribers.
         </p>
       </div>
       <img
+        data-aos="fade-down"
+        data-aos-duration="3000"
         src={headerMeal}
         alt=""
         className="banner-img-2"

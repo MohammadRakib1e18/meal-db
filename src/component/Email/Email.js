@@ -50,7 +50,8 @@ const Email = () => {
           id=""
         />
         <textarea type="text" placeholder="message" required name="message" />
-        <input id="email-submit" type="submit" value="Submit" />
+        {/* <button id="email-submit" type="submit" value="Submit" /> */}
+        <button className="submit-btn">Submit</button>
       </form>
     </div>
   );
