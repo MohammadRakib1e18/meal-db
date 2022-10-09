@@ -1,3 +1,14 @@
+.menuBar {
+  z-index: 1000;
+  margin: 3px;
+  margin-left: 5px;
+
+  font-size: 1.4rem;
+  color: white;
+  position: absolute;
+  display: none;
+}
+
 nav {
   margin: 0;
   border: 0;
@@ -5,6 +16,7 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 2px 5px;
+  position: static;
 }
 nav img {
   width: 250px;
@@ -12,6 +24,7 @@ nav img {
 }
 nav ul {
   display: flex;
+  gap: 5px;
   margin: 10px;
 }
 nav ul li {
@@ -23,13 +36,54 @@ nav ul li {
   margin: 0 15px;
   padding: 5px;
   cursor: pointer;
+  color: white;
+  border-radius: 15px;
 }
 
 .active {
   background-color: #d88526;
   color: white;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
 }
 .active:hover {
   background-color: #f78606;
 }
+.inactive {
+  background-color: #0a79c434;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .menuBar {
+    display: block;
+  }
+  .hideNav {
+    position: absolute;
+    top: -300px;
+  }
+  .showNav {
+    position: relative;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  nav{
+    flex-direction: column;
+  }
+  nav ul{
+    margin:0;
+    padding-left: 0;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #0e2945;
+    width: 100%;
+  }
+  nav img{
+    margin: 0 auto;
+  }
+}
+

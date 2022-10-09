@@ -1,9 +1,10 @@
 .form {
   text-align: center;
   width: 100%;
-  margin: 50px auto;
+  margin-top: 50px;
   padding: 20px;
   background: url("../../Images/Animated\ Shape.svg");
+  box-sizing: border-box;
 }
 .form h1 {
   color: white;
@@ -103,13 +104,3 @@ input[type="submit"] {
   opacity: 1;
 }
 
-@media screen and (max-width: 688px) {
-  .form {
-    width: 95%;
-  }
-}
-@media screen and (min-width: 689px) and (max-width: 992px) {
-  .form {
-    width: 90%;
-  }
-}
