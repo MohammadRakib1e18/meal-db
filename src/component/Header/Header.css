@@ -14,7 +14,7 @@ a{
     font-weight: 700;
 }
 .banner h2{
-    font-size:4em;
+    font-size:3em;
     position: relative;
     margin: 0;
     font-weight: 900;
@@ -31,18 +31,19 @@ a{
     align-items: center;
     left: 0%;
     width: 120%;
-    height: 90%;
-    background: linear-gradient(90deg, transparent 0%, #7188A0 1%, #7188A0 100%);
-    animation: animate 8s linear infinite;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, #7188A0 1%, #7188A0 120%);
+    animation: animate 6s linear infinite;
 }
 @keyframes animate {
     0%{
-        left: -20%
+        left: 10%
     }
     100%{
-        left: 140%
+        left: 120%
     }
 }
+
 .banner h2 span{
     color: #F0932B;
 }

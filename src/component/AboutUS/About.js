@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
+import Expert from '../Expert/Expert';
+import './About.css';
 
 const About = () => {
     useEffect(()=>{
         document.title ="Home:About";
     },[])
     return (
-        <div>
-            <h1>This is about section</h1>
+        <div className='about'>
+            <Expert></Expert>
         </div>
     );
 };

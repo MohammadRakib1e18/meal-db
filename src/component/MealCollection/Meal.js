@@ -24,13 +24,12 @@ const Meal = () => {
   useEffect(() => {
     let storedCart = JSON.parse(localStorage.getItem("shopping-cart"));
     let orders = [];
-    orders = loadedMeals?.filter((meal) => {
-      if(!storedCart) return;
-      if (storedCart[meal.idMeal]) {
-        meal.Quantity = storedCart[meal.idMeal];
-        return meal;
-      }
-    });
+    for(let id in storedCart){
+      let data = storedCart[id];
+      let Quantity = data[0];
+      let strMeal=data[1];
+      orders.push({idMeal:id, Quantity, strMeal });
+    }
     setSelectedMeals(orders);
   }, [loadedMeals]);
 
@@ -42,7 +41,7 @@ const Meal = () => {
     console.log(wholeMeal);
     let order = selectedMeals?.find((meal) => meal.idMeal === wholeMeal.idMeal);
     if (!order) {
-      addToDb(wholeMeal.idMeal);
+      addToDb(wholeMeal.idMeal, wholeMeal.strMeal);
       let newOrder = {
         strMeal: wholeMeal.strMeal,
         Quantity: 1,
@@ -68,7 +67,7 @@ const Meal = () => {
             });
           } else {
             meal.Quantity++;
-            addToDb(wholeMeal.idMeal);
+            addToDb(wholeMeal.idMeal, wholeMeal.strMeal);
             Swal.fire({
               icon: "success",
               title: "Order Placed Successfully!",
@@ -83,10 +82,19 @@ const Meal = () => {
   };
 
   const deleteItem = (item) => {
-    console.log(item);
-    const remItem = selectedMeals.filter((meal) => meal.idMeal !== item.idMeal);
-    removeFromDb(item.idMeal);
-    setSelectedMeals([...remItem]);
+    let storedCart = JSON.parse(localStorage.getItem("shopping-cart"));
+    let remOrders = [];
+    for (let id in storedCart) {
+      if(id==item.idMeal){
+        removeFromDb(item.idMeal);
+      }else{
+        let data = storedCart[id];
+        let Quantity = data[0];
+        let strMeal = data[1];
+        remOrders.push({idMeal:id, Quantity, strMeal });
+      }
+    }
+    setSelectedMeals(remOrders);
   };
 
   return (

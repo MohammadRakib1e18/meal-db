@@ -5,7 +5,7 @@ import "./Cart.css";
 import empty_cart from "../../Images/animat-shopping-cart-color.gif";
 
 const Cart = ({ meal, deleteItem }) => {
-  console.log(meal);
+  // console.log(meal);
   if (meal.length === 0) {
     return (
       <div className="empty-cart">
@@ -16,7 +16,7 @@ const Cart = ({ meal, deleteItem }) => {
   }
   else{
     meal.map(m=>{
-      console.log(m);
+      // console.log(m);
     });
     return (
       <ol className="cart">
