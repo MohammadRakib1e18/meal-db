@@ -25,6 +25,7 @@ const Meal = () => {
     let storedCart = JSON.parse(localStorage.getItem("shopping-cart"));
     let orders = [];
     orders = loadedMeals?.filter((meal) => {
+      if(!storedCart) return;
       if (storedCart[meal.idMeal]) {
         meal.Quantity = storedCart[meal.idMeal];
         return meal;
