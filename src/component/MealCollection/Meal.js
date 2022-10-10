@@ -4,13 +4,14 @@ import Cart from "../Cart/Cart";
 import Selection from "../Selection/Selection";
 import SingleMeal from "../SingleMeal/SingleMeal";
 import "./Meal.css";
+import { addToDb } from "../../utilities/fakedb";
+import { removeFromDb } from "../../utilities/fakedb";
 
 const Meal = () => {
   const [loadedMeals, setLoadedMeals] = useState([]);
   const [selectedMeals, setSelectedMeals] = useState([]);
-  const [letter, setLetter] = useState('a');
-  const [id, setId] = useState(1);
-  
+  const [letter, setLetter] = useState("a");
+
   useEffect(() => {
     let url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
     fetch(url)
@@ -20,17 +21,35 @@ const Meal = () => {
       });
   }, [letter]);
 
+  useEffect(() => {
+    let storedCart = JSON.parse(localStorage.getItem("shopping-cart"));
+    let orders = [];
+    orders = loadedMeals?.filter((meal) => {
+      if (storedCart[meal.idMeal]) {
+        meal.Quantity = storedCart[meal.idMeal];
+        return meal;
+      }
+    });
+    setSelectedMeals(orders);
+  }, [loadedMeals]);
+
   const getLetter = (letter) => {
-    if(letter) setLetter(letter);
+    if (letter) setLetter(letter);
   };
 
-  const addToCart = (mealName) => {
-
-    let order = selectedMeals.find((meal) => meal.mealName === mealName);
+  const addToCart = (wholeMeal) => {
+    console.log(wholeMeal);
+    let order = selectedMeals?.find((meal) => meal.idMeal === wholeMeal.idMeal);
     if (!order) {
-      let newOrder = { mealName, Quantity: 1, id:id };
-      setId(id+1);
-      setSelectedMeals([...selectedMeals, newOrder]);
+      addToDb(wholeMeal.idMeal);
+      let newOrder = {
+        strMeal: wholeMeal.strMeal,
+        Quantity: 1,
+        idMeal: wholeMeal.idMeal,
+      };
+      selectedMeals
+        ? setSelectedMeals([...selectedMeals, newOrder])
+        : setSelectedMeals([newOrder]);
       Swal.fire({
         icon: "success",
         title: "Order Placed Successfully!",
@@ -48,6 +67,7 @@ const Meal = () => {
             });
           } else {
             meal.Quantity++;
+            addToDb(wholeMeal.idMeal);
             Swal.fire({
               icon: "success",
               title: "Order Placed Successfully!",
@@ -61,10 +81,12 @@ const Meal = () => {
     }
   };
 
-  const deleteItem = item => {
-    const remItem = selectedMeals.filter(meal => meal.id !== item.id);
+  const deleteItem = (item) => {
+    console.log(item);
+    const remItem = selectedMeals.filter((meal) => meal.idMeal !== item.idMeal);
+    removeFromDb(item.idMeal);
     setSelectedMeals([...remItem]);
-  }
+  };
 
   return (
     <>
@@ -91,5 +113,4 @@ const Meal = () => {
     </>
   );
 };
-
 export default Meal;

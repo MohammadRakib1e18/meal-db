@@ -28,7 +28,7 @@ const SingleMeal = (props) => {
         </section>
         <button
           onClick={() => {
-            addToCart(strMeal);
+            addToCart(props.meal);
           }}
         >
           Add to Cart{" "}

@@ -37,19 +37,26 @@
 }
 .empty-cart img{
     width: 80%;
+    max-width: 300px;
+    margin-top: -20px;
 }
 .cart h3, .empty-cart h3{
     position: relative;
     margin: 0;
-    margin-top: 20px;
     font-weight: 900;
     z-index: 1;
     overflow: hidden;
     color: rgb(10, 49, 75);
 }
+.empty-cart h3{
+    margin-top: -40px;
+}
+.cart h3{
+    margin-top: 30px;
+}
 .cart h3::before, .empty-cart h3::before{
     content: '|';
-    color: rgb(160, 9, 9);
+    color: #E2CBAC;
     font-weight: 400;
     position: absolute;
     display: flex;
@@ -59,7 +66,7 @@
     width: 120%;
     height: 100%;
     background: linear-gradient(90deg, transparent 0%, #E2CBAC 1%, #E2CBAC 100%);
-    animation: animate 4s linear infinite;
+    animation: animate 5s linear infinite;
 }
 @keyframes animate {
     0%{
