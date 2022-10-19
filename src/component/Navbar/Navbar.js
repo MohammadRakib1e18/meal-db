@@ -50,6 +50,12 @@ const Navbar = () => {
           >
             <li>About Us</li>
           </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "inactive")}
+            to="login"
+          >
+            <li>Sign In</li>
+          </NavLink>
         </ul>
       </nav>
     </div>

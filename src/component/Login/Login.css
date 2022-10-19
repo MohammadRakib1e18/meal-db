@@ -1,0 +1,103 @@
+.login-container {
+  min-height: 650px;
+  padding-top: 20px;
+  background-image: url("../../Images/login.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+}
+.login {
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #35404e3a;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: 10;
+}
+form h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+.login input {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  margin-right: 0;
+  box-sizing: border-box;
+}
+.login-container button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: none;
+}
+.forget-password, .register-link {
+  margin-top: -1px;
+  color: #f78606;
+  font-weight: 700;
+}
+.forget-password:hover, .register-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hr {
+  margin-top: 50px;
+  position: relative;
+}
+.hr small {
+  font-size: 1.8rem;
+  border-radius: 50%;
+  background-color: #2c3949;
+  padding: 8px 15px;
+  position: absolute;
+  top: -28px;
+  margin-left: -30px;
+}
+.hr hr {
+  width: 100%;
+}
+.sign-with-social-media {
+    margin-top: 5%;
+}
+.sign-in-icons {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.sign-in-icons h2 {
+  padding: 4px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  max-width: 100px;
+}
+#twitter {
+  background-color: #20aae8;
+}
+#google {
+  background-color: #cf4832;
+}
+#facebook {
+    background-color: #36558e;
+}
+#github {
+  background-color: #22272b;
+}
+

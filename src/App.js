@@ -6,6 +6,8 @@ import Home from './component/Home/Home';
 import Main from './layouts/Main';
 import NotFound from './component/NotFound/NotFound';
 import Orders from './component/Orders/Orders';
+import Login from './component/Login/Login';
+import Registration from './component/Registration/Registration';
 
 const App = () => {
     const router = createBrowserRouter([
@@ -33,6 +35,14 @@ const App = () => {
           {
             path: "products",
             element: <Products></Products>,
+          },
+          {
+            path: "login",
+            element: <Login></Login>,
+          },
+          {
+            path: "register",
+            element: <Registration></Registration>,
           },
         ],
       },
