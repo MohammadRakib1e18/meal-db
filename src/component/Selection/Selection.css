@@ -19,22 +19,7 @@
     cursor: pointer;
     border-radius: 8px;
 }
-.selections ul li:hover{
-    /* background-color: #053364; */
-}
 
-/* @media screen and (max-width: 688px){
-    .selections ul{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-@media screen and (min-width: 689px) and (max-width: 992px) {
-    .selections ul{
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-    }
-} */
 /* responsiveness */
 
 /* mobile device  */

@@ -1,14 +1,17 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiEyeOff, FiEye } from "react-icons/fi";
 import { AuthContext } from "../../contexts/UserContext";
 import Swal from "sweetalert2";
 
 const Login = () => {
   const [show, setShow] = useState(false);
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -18,17 +21,49 @@ const Login = () => {
 
     signIn(email, password)
       .then((result) => {
-        console.log(result.user);
-        Swal.fire({
-          icon: "success",
-          title: `Login Successful!`,
-          showConfirmButton: true,
-          timer: 1500,
-        });
+        loginResult(true, result);
       })
       .catch((error) => {
+        loginResult(false);
         console.error("Error: ", error);
       });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        loginResult(true, result);
+      })
+      .catch((error) => {
+        loginResult(false);
+        console.error("Error: ", error);
+      });
+  };
+
+  const loginResult = (isSuccessful, result) => {
+    if (isSuccessful) {
+      console.log(result.user);
+      navigate(from, { replace: true });
+      Swal.fire({
+        icon: "success",
+        title: `Login Successful!`,
+        showConfirmButton: true,
+        timer: 1500,
+      });
+      
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Login Failed! Try Again",
+      });
+    }
+  };
+
+  const handleGithubSignIn = () => {
+    console.log("handleGithubSignIn");
+  };
+  const handleFacebookSignIn = () => {
+    console.log("handleFacebookSignIn");
   };
   return (
     <>
@@ -72,13 +107,13 @@ const Login = () => {
         <div className="sign-with-social-media">
           <h2>Sign In With Social Media Account</h2>
           <div className="sign-in-icons">
-            <h2 id="google">
+            <h2 id="google" onClick={handleGoogleSignIn}>
               <FaGoogle /> Google
             </h2>
-            <h2 id="github">
+            <h2 id="github" onClick={handleGithubSignIn}>
               <FaGithub /> Github
             </h2>
-            <h2 id="facebook">
+            <h2 id="facebook" onClick={handleFacebookSignIn}>
               <FaFacebook /> Facebook
             </h2>
             <h2 id="twitter">
@@ -88,7 +123,7 @@ const Login = () => {
         </div>
         <p>
           Don't have an account?{" "}
-          <Link to="/register">
+          <Link to="/register" state={{ from: location }} replace>
             <span className="register-link">Register Now!</span>
           </Link>
         </p>

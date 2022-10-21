@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Registration.css";
 import { FaFacebook, FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 import { FiEyeOff, FiEye} from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/UserContext";
 import Swal from "sweetalert2";
 
@@ -10,6 +10,9 @@ const Registration = () => {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   
 
   const handleRegister = (event) => {
@@ -40,6 +43,7 @@ const Registration = () => {
         showConfirmButton: true,
         timer: 1500,
       });
+      navigate(from, {replace:true});
     })
     .catch(error=>{
       console.error("error shows: ", error);

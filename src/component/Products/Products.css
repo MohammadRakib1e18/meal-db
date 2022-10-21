@@ -5,9 +5,11 @@
 }
 .production-component h1{
     font-size: 3rem;
-    margin-top: 0;
+    margin-top: 30px;
     padding-top: 10px;
+    font-weight: 400;
     color: rgb(87, 55, 6);
+    text-decoration: underline;
 }
 .production-component img{
     width: 500px;

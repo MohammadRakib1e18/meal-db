@@ -8,6 +8,7 @@ import NotFound from './component/NotFound/NotFound';
 import Orders from './component/Orders/Orders';
 import Login from './component/Login/Login';
 import Registration from './component/Registration/Registration';
+import PrivateRoute from './routes/PrivateRoute';
 
 const App = () => {
     const router = createBrowserRouter([
@@ -25,16 +26,24 @@ const App = () => {
           },
           {
             path: "orders",
-            element: <Orders></Orders>,
+            element: (
+              <PrivateRoute>
+                <Orders></Orders>
+              </PrivateRoute>
+            ),
           },
-          
+
           {
             path: "about",
             element: <About></About>,
           },
           {
             path: "products",
-            element: <Products></Products>,
+            element: (
+              <PrivateRoute>
+                <Products></Products>
+              </PrivateRoute>
+            ),
           },
           {
             path: "login",
