@@ -1,5 +1,5 @@
 .login-container {
-  min-height: 650px;
+  min-height: 680px;
   padding-top: 20px;
   background-image: url("../../Images/login.jpg");
   background-repeat: no-repeat;
@@ -86,7 +86,7 @@ form h1 {
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  max-width: 100px;
+  width: 150px;
 }
 #twitter {
   background-color: #20aae8;

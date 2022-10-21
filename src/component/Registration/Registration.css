@@ -1,0 +1,12 @@
+
+.password1, .password2{
+    position: relative;
+    z-index: 1;
+}
+.faFac1, .faFac2{
+    position: absolute;
+    right: 4%;
+    margin-top: 15px;
+    z-index: 100;
+    cursor: pointer;
+}

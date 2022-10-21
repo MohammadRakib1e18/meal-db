@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import mealdb from "../../Images/mealdb-logo.png";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { AuthContext } from "../../contexts/UserContext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+    .then(result =>{
+      console.log(result);
+    })
+    .catch(error=>{
+      console.log(error);
+    })
+  }
   
 
   return (
@@ -50,12 +62,24 @@ const Navbar = () => {
           >
             <li>About Us</li>
           </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "active" : "inactive")}
-            to="login"
-          >
-            <li>Sign In</li>
-          </NavLink>
+          {user?.uid ? (
+            <button onClick={handleLogOut}>Sign Out</button>
+          ) : (
+            <>
+              <NavLink
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+                to="login"
+              >
+                <li>Sign In</li>
+              </NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+                to="register"
+              >
+                <li>Sign Up</li>
+              </NavLink>
+            </>
+          )}
         </ul>
       </nav>
     </div>
